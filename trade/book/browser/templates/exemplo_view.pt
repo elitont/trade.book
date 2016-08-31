@@ -1,0 +1,60 @@
+<metal:page define-macro="master">
+<tal:doctype tal:replace="structure string:&lt;!DOCTYPE html&gt;" />
+
+<html   xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br"
+        xmlns:metal="http://xml.zope.org/namespaces/metal"
+        xmlns:tal="http://xml.zope.org/namespaces/tal"
+        xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        metal:use-macro="context/main_template/macros/master"
+        i18n:domain="trade.book">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<!-- se descomentar "title" e "description" deve deixar explicito o que é pra aparecer ou em branco se não quiser nada-->
+
+<!-- <metal:content-title fill-slot="content-title"> -->
+<!-- </metal:content-title> -->
+
+<!-- <metal:content-description fill-slot="content-description"> -->
+<!-- </metal:content-description> -->
+
+<metal:content-core fill-slot="content-core">
+	<div>	
+	    <a tal:attributes="href string:${context/link}">
+	    	<span tal:content="string:${context/link}">
+				link
+	    	</span>
+	    </a>
+    </div>
+    <p></p>
+    <div tal:define = "arq context/arquivo"
+       	 tal:condition="python: arq is not None">	
+	    <a tal:attributes="href string:${context/absolute_url}/@@download/arquivo">
+	    	<span tal:content="string:Arquivo">
+				arquivo
+	    	</span>
+	    </a>
+    </div>
+    <p></p>
+    <div tal:define = "imagem context/imagem"
+       	 tal:condition="python: imagem is not None">
+	 	<img tal:attributes="src string: ${context/absolute_url}/@@images/imagem"/>
+	</div>
+    <p></p>
+	<div>
+		<span tal:content="context/texto_rico/output"> texto rico </span>
+	</div>
+    <p></p>
+	<div>
+		<span tal:content="context/selecao"> seleção </span>
+	</div>
+    <p></p>
+    <div tal:define="data python:view.getDate()">
+		<span tal:content="data"> data </span>
+	</div>
+
+</metal:content-core>
+</body>
+</html>
+</metal:page>

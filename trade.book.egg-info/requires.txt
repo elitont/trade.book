@@ -1,0 +1,5 @@
+zope.app.content
+five.grok
+setuptools
+plone.app.dexterity [relations]
+plone.app.relationfield

@@ -1,0 +1,28 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    i18n_domain="trade.book">
+    <!-- The search box -->
+
+  <browser:page
+       name="exemplo_view"
+       for="*"
+       layer="zope.interface.Interface"
+       class=".views.exemploView"
+       permission="zope2.View"
+       />   
+
+  <!-- Register resources -->
+
+  <browser:resource
+      name="trade.book.css"
+      file="resources/trade.book.css"
+      />
+
+  <browser:resource
+      name="trade.book.js"
+      file="resources/trade.book.js"
+      />
+      
+</configure>

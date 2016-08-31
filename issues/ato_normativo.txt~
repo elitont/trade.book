@@ -1,0 +1,11 @@
+
+Problemas encontrados no tipo 'ato_normativo'
+
+===================== // =====================
+
+#1 	ISSUE: ID duplicado caso ato_normativo tenha mesmo número.
+============================================================================================================	
+	Se criar dois ou mais atos normativos com mesmo número e no mesmo diretório, ocorre duplicidade de 'id'.
+	Essa duplicidade gera a seguinte mensagem de erro: 'The id "some_id" is invalid - it is already in use.'
+	O problema é que esse erro não cria o titulo do ato_normativo salvo, assim requer maior habilidade do usuário
+	para contornar o problema e conseguir editar o objeto.
