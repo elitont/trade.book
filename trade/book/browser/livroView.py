@@ -7,7 +7,6 @@ import time
 import datetime
 import transaction
 from plone import api
-
 from zope.interface import Interface
 from z3c.relationfield import RelationValue
 from Products.Five.browser import BrowserView
@@ -19,30 +18,21 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.interfaces import IFolderish
 from Acquisition import aq_inner
 from zope.component import getMultiAdapter
-
-# from plone.app.layout.viewlets.content import ContentRelatedItems
 from plone.app.relationfield.behavior import IRelatedItems
 from Products.CMFPlone.utils import base_hasattr
 from urlparse import urlparse
 from datetime import datetime
 from datetime import date
 from transaction import commit
-# from plone.protect.auto import safeWrite
-# from plone.protect import CheckAuthenticator
-
 from plone.uuid.interfaces import IUUID
 
 reload(sys)  
 sys.setdefaultencoding('utf8')
 
-from plone.protect.interfaces import IDisableCSRFProtection
-from zope.interface import alsoProvides 
-
 class livroView(BrowserView):
 	index = ViewPageTemplateFile("templates/livro_View.pt")
 
 	def __call__(self):
-		alsoProvides(self.request, IDisableCSRFProtection) 
 		return self.index()
 
 	def getDate(self):

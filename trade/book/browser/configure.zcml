@@ -13,6 +13,14 @@
        permission="zope2.View"
        />   
 
+  <browser:page
+       name="livro_View"
+       for="*"
+       layer="zope.interface.Interface"
+       class=".views.livroView"
+       permission="zope2.View"
+       />   
+
   <!-- Register resources -->
 
   <browser:resource

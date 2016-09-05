@@ -11,49 +11,62 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
-<!-- se descomentar "title" e "description" deve deixar explicito o que é pra aparecer ou em branco se não quiser nada-->
+<metal:content-title fill-slot="content-title">
+	<h1 class="documentFirstHeading">
+		<span tal:content="context/title"> Título</span>
+	</h1>
+</metal:content-title>
 
-<!-- <metal:content-title fill-slot="content-title"> -->
-<!-- </metal:content-title> -->
-
-<!-- <metal:content-description fill-slot="content-description"> -->
-<!-- </metal:content-description> -->
+<metal:content-description fill-slot="content-description">
+</metal:content-description>
 
 <metal:content-core fill-slot="content-core">
-	<div>	
-	    <a tal:attributes="href string:${context/link}">
-	    	<span tal:content="string:${context/link}">
-				link
-	    	</span>
-	    </a>
-    </div>
-    <p></p>
-    <div tal:define = "arq context/arquivo"
-       	 tal:condition="python: arq is not None">	
-	    <a tal:attributes="href string:${context/absolute_url}/@@download/arquivo">
-	    	<span tal:content="string:Arquivo">
-				arquivo
-	    	</span>
-	    </a>
-    </div>
-    <p></p>
-    <div tal:define = "imagem context/imagem"
+    <div tal:define = "imagem context/capa"
        	 tal:condition="python: imagem is not None">
-	 	<img tal:attributes="src string: ${context/absolute_url}/@@images/imagem"/>
+	 	<img tal:attributes="src string: ${context/absolute_url}/@@images/capa"/>
 	</div>
-    <p></p>
-	<div>
-		<span tal:content="context/texto_rico/output"> texto rico </span>
+	<br/>
+	<div tal:define="sinopse context/sinopse"
+		 tal:condition="python: sinopse is not None">
+		<b><span class="">Sinopse:<span></b>
+		<span tal:content="context/sinopse"> sinopse </span>
 	</div>
-    <p></p>
-	<div>
-		<span tal:content="context/selecao"> seleção </span>
+	<br/>
+	<div tal:define="autor context/autor"
+		 tal:condition="python: autor is not None">
+		<b><span class="">Autor:<span></b>
+		<span tal:content="context/autor"> autor </span>
 	</div>
-    <p></p>
-    <div tal:define="data python:view.getDate()">
+	<br/>
+	<div tal:define="isbn context/isbn"
+		 tal:condition="python: isbn is not None">
+		<b><span class="">ISBN:<span></b>
+		<span tal:content="context/isbn"> isbn </span>
+	</div>
+	<br/>
+	<div tal:define="editora context/editora"
+		 tal:condition="python: editora is not None">
+		<b><span class="">Editora:<span></b>
+		<span tal:content="context/editora"> editora </span>
+	</div>
+	<br/>
+	<div tal:define="edicao context/edicao"
+		 tal:condition="python: edicao is not None">
+		<b><span class="">Edição:<span></b>
+		<span tal:content="context/edicao"> edicao </span>
+	</div>
+	<br/>
+	<div tal:define="data_de_lancamento context/data_de_lancamento; data python:view.getDate(data_de_lancamento)"
+		 tal:condition="python: data is not None">
+		<b><span class="">Ano:<span></b>
+		<span tal:content="data"> data_lancamento </span>
+	</div>
+	<br/>
+	<div tal:define="datap context/data_publicacao_no_site; data python:view.getDate(datap)"
+		 tal:condition="python: data is not None">
+		<b><span class="">Data de publicação:<span></b>
 		<span tal:content="data"> data </span>
 	</div>
-
 </metal:content-core>
 </body>
 </html>

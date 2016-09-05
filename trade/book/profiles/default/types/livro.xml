@@ -12,9 +12,10 @@
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types"/>
  <property name="allow_discussion">False</property>
- <property name="default_view">view</property>
+ <property name="default_view">livro_View</property>
  <property name="view_methods">
   <element value="view"/>
+  <element value="livro_View"/>
  </property>
  <property name="default_view_fallback">False</property>
  <property name="add_permission">cmf.AddPortalContent</property>
@@ -38,8 +39,9 @@
         &lt;description/&gt;
         &lt;title&gt;ISBN&lt;/title&gt;
       &lt;/field&gt;
-      &lt;field name="data_publicacao_no_site" type="zope.schema.Datetime"&gt;
+      &lt;field name="data_publicacao_no_site" type="zope.schema.Date"&gt;
         &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
         &lt;title&gt;Data de Publica&amp;#231;&amp;#227;o no site&lt;/title&gt;
       &lt;/field&gt;
       &lt;field name="editora" type="zope.schema.TextLine"&gt;
@@ -51,12 +53,12 @@
         &lt;required&gt;False&lt;/required&gt;
         &lt;title&gt;Sinopse&lt;/title&gt;
       &lt;/field&gt;
-      &lt;field name="edicao" type="zope.schema.Int"&gt;
+      &lt;field name="edicao" type="zope.schema.TextLine"&gt;
         &lt;description/&gt;
         &lt;required&gt;False&lt;/required&gt;
         &lt;title&gt;Edi&amp;#231;&amp;#227;o&lt;/title&gt;
       &lt;/field&gt;
-      &lt;field name="data_de_lancamento" type="zope.schema.Datetime"&gt;
+      &lt;field name="data_de_lancamento" type="zope.schema.Date"&gt;
         &lt;description/&gt;
         &lt;required&gt;False&lt;/required&gt;
         &lt;title&gt;Data de Lan&amp;#231;amento&lt;/title&gt;
