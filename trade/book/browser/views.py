@@ -62,3 +62,12 @@ class livroView(BrowserView):
 			dd = dt[2]
 			result = dd+'/'+mm+'/'+yy
 		return result
+
+	def getModificationDate(self):
+		data_mod = self.context.ModificationDate(zone=None)
+		data	 = data_mod.split('T',1)
+		hora	 = data[1].split('-',1)[0].split(':')
+		hora	 = hora[0]+'h'+hora[1]
+		ts	     = time.strptime(data_mod[:19], "%Y-%m-%dT%H:%M:%S") 
+		data	 = time.strftime("%d/%m/%Y", ts)
+		return data+' às '+hora

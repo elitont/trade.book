@@ -62,9 +62,8 @@
 		<span tal:content="data"> data_lancamento </span>
 	</div>
 	<br/>
-	<div tal:define="datap context/data_publicacao_no_site; data python:view.getDate(datap)"
-		 tal:condition="python: data is not None">
-		<b><span class="">Data de publicação:<span></b>
+	<div tal:define="data python:view.getModificationDate()">
+		<b><span class="">Atualizado em:<span></b>
 		<span tal:content="data"> data </span>
 	</div>
 </metal:content-core>
