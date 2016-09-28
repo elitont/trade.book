@@ -2,7 +2,8 @@
 <object name="anuncio" meta_type="Dexterity FTI" i18n:domain="plone"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
  <property name="title" i18n:translate="">Anuncio</property>
- <property name="description" i18n:translate="">None</property>
+ <property name="description"
+    i18n:translate="">Objeto utilizado para publicidade</property>
  <property name="icon_expr">string:${portal_url}/document_icon.png</property>
  <property name="factory">anuncio</property>
  <property name="add_view_expr">string:${folder_url}/++add++anuncio</property>
@@ -20,13 +21,21 @@
  <property name="add_permission">cmf.AddPortalContent</property>
  <property name="klass">plone.dexterity.content.Container</property>
  <property name="behaviors">
-  <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
   <element value="plone.app.content.interfaces.INameFromTitle"/>
  </property>
  <property name="schema"></property>
  <property
     name="model_source">&lt;model xmlns:lingua="http://namespaces.plone.org/supermodel/lingua" xmlns:users="http://namespaces.plone.org/supermodel/users" xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns:i18n="http://xml.zope.org/namespaces/i18n" xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns="http://namespaces.plone.org/supermodel/schema"&gt;
     &lt;schema&gt;
+      &lt;field name="title" type="zope.schema.TextLine"&gt;
+        &lt;description&gt;Titulo do an&amp;#250;ncio&lt;/description&gt;
+        &lt;title&gt;Titulo&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name="description" type="zope.schema.Text"&gt;
+        &lt;description&gt;Texto descritivo da publicidade.&lt;/description&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Descri&amp;#231;&amp;#227;o&lt;/title&gt;
+      &lt;/field&gt;
       &lt;field name="imagem" type="plone.namedfile.field.NamedBlobImage"&gt;
         &lt;description/&gt;
         &lt;title&gt;Imagem&lt;/title&gt;
