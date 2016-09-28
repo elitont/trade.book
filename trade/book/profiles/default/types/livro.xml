@@ -31,6 +31,11 @@
         &lt;description/&gt;
         &lt;title&gt;Titulo&lt;/title&gt;
       &lt;/field&gt;
+      &lt;field name="description" type="zope.schema.Text"&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Sinopse&lt;/title&gt;
+      &lt;/field&gt;
       &lt;field name="autor" type="zope.schema.TextLine"&gt;
         &lt;description/&gt;
         &lt;title&gt;Autor&lt;/title&gt;
@@ -42,11 +47,6 @@
       &lt;field name="editora" type="zope.schema.TextLine"&gt;
         &lt;description/&gt;
         &lt;title&gt;Editora&lt;/title&gt;
-      &lt;/field&gt;
-      &lt;field name="sinopse" type="zope.schema.Text"&gt;
-        &lt;description/&gt;
-        &lt;required&gt;False&lt;/required&gt;
-        &lt;title&gt;Sinopse&lt;/title&gt;
       &lt;/field&gt;
       &lt;field name="edicao" type="zope.schema.TextLine"&gt;
         &lt;description/&gt;

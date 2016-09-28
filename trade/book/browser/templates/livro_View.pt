@@ -26,10 +26,10 @@
 	 	<img tal:attributes="src string: ${context/absolute_url}/@@images/capa"/>
 	</div>
 	<br/>
-	<div tal:define="sinopse context/sinopse"
+	<div tal:define="sinopse context/description"
 		 tal:condition="python: sinopse is not None">
 		<b><span class="">Sinopse:<span></b>
-		<span tal:content="context/sinopse"> sinopse </span>
+		<span tal:content="context/description"> sinopse </span>
 	</div>
 	<br/>
 	<div tal:define="autor context/autor"
