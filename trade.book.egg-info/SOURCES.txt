@@ -15,4 +15,5 @@ trade/book/__init__.py
 trade/book/tests.py
 trade/book/browser/__init__.py
 trade/book/browser/livroView.py
+trade/book/browser/publicidadeView.py
 trade/book/browser/views.py

@@ -1,0 +1,40 @@
+<metal:page define-macro="master">
+<tal:doctype tal:replace="structure string:&lt;!DOCTYPE html&gt;" />
+
+<html   xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br"
+        xmlns:metal="http://xml.zope.org/namespaces/metal"
+        xmlns:tal="http://xml.zope.org/namespaces/tal"
+        xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        metal:use-macro="context/main_template/macros/master"
+        i18n:domain="trade.book">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<metal:content-title fill-slot="content-title">
+	<h1 class="documentFirstHeading">
+		<span tal:content="context/title"> TÃ­tulo</span>
+	</h1>
+</metal:content-title>
+
+<metal:content-description fill-slot="content-description">
+</metal:content-description>
+
+<metal:content-core fill-slot="content-core">
+    <div tal:define = "imagem context/capa"
+       	 tal:condition="python: imagem is not None">
+	 	<img tal:attributes="src string: ${context/absolute_url}/@@images/capa"/>
+	</div>
+	<br/>
+	
+	<metal:content-core fill-slot="content-core">
+	<div>	
+	    <a tal:attributes="href string:${context/link}">
+	    	<span tal:content="string:${context/link}">
+				link
+	    	</span>
+	</div>
+</metal:content-core>
+</body>
+</html>
+</metal:page>
