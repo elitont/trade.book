@@ -39,11 +39,6 @@
         &lt;description/&gt;
         &lt;title&gt;ISBN&lt;/title&gt;
       &lt;/field&gt;
-      &lt;field name="data_publicacao_no_site" type="zope.schema.Date"&gt;
-        &lt;description/&gt;
-        &lt;required&gt;False&lt;/required&gt;
-        &lt;title&gt;Data de Publica&amp;#231;&amp;#227;o no site&lt;/title&gt;
-      &lt;/field&gt;
       &lt;field name="editora" type="zope.schema.TextLine"&gt;
         &lt;description/&gt;
         &lt;title&gt;Editora&lt;/title&gt;

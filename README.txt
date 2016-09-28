@@ -7,7 +7,7 @@ Trabalho da disciplina de Planejamento e Gestão de Projetos
 
 Comandos:
 	- Compilar (~/plone/zinstance): sudo -u plone_buildout bin/buildout
-	- Rodar (~/plone/zinstance): sudo -u plone_deamon bin/plonectl [start | fg]
+	- Rodar (~/plone/zinstance): sudo -u plone_daemon bin/plonectl [start | fg]
 Plugin:
 	- Salve a pasta "trade.book" em ~/plone/zinstance/src
 	- Edite o arquivo buildout.cfg em ~/plone/zinstance:
